@@ -1,1 +1,1 @@
-indexer: bundle exec indexer.rb
+indexer: bundle exec ruby indexer.rb
