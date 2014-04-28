@@ -1,4 +1,4 @@
-require 'environment'
+require './environment'
 
 client = Restforce.new
 client.create! 'PushTopic', {
