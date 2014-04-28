@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.1'
 
 gem 'restforce', git: 'https://github.com/ejholmes/restforce.git'
 gem 'elasticsearch'
