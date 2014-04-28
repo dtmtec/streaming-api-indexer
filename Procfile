@@ -1,0 +1,1 @@
+indexer: bundle exec indexer.rb
