@@ -6,3 +6,5 @@ gem 'elasticsearch'
 
 gem 'eventmachine'
 gem 'faye', '0.8.9'
+
+gem 'debugger'

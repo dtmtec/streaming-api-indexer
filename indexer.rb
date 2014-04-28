@@ -1,20 +1,12 @@
-require 'bundler/setup'
-
-Bundler.require :default
-
-Restforce.configure do |config|
-  config.compress = true
-  config.instance_url = ENV['SALESFORCE_INSTANCE_URL'] || 'https://na10.salesforce.com'
-  config.api_version = '29.0'
-end
+require 'environment'
 
 client = Restforce.new
 
-elastic_search_client = Elasticsearch::Client.new({
-  hosts: ENV['BONSAI_URL'] || "localhost:9200"
-})
+elastic_search_client = Elasticsearch::Client.new({hosts: ENV['BONSAI_URL'] || "localhost:9200"})
 
 EM.run do
+  client.faye.set_header 'Authorization', "OAuth #{client.authenticate!.access_token}"
+
   client.subscribe 'AllAccounts' do |message|
     elastic_search_client.index(
       index: 'salesforce',
