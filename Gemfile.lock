@@ -1,0 +1,36 @@
+GIT
+  remote: https://github.com/ejholmes/restforce.git
+  revision: c9508b176f4a8c84c88376002d1815cbdf9ebba1
+  specs:
+    restforce (1.4.3)
+      faraday (~> 0.8.4)
+      faraday_middleware (>= 0.8.8)
+      hashie (>= 1.2.0, < 2.1)
+      json (>= 1.7.5, < 1.9.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    elasticsearch (1.0.1)
+      elasticsearch-api (= 1.0.1)
+      elasticsearch-transport (= 1.0.1)
+    elasticsearch-api (1.0.1)
+      multi_json
+    elasticsearch-transport (1.0.1)
+      faraday
+      multi_json
+    faraday (0.8.9)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
+    hashie (2.0.5)
+    json (1.8.1)
+    multi_json (1.9.3)
+    multipart-post (1.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  elasticsearch
+  restforce!
