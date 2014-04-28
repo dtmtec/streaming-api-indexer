@@ -1,7 +1,10 @@
 require 'elasticsearch'
 require 'restforce'
 
-elastic_search_client = Elasticsearch::Client.new
+client = Restforce.new
+elastic_search_client = Elasticsearch::Client.new({
+  hosts: ENV['BONSAI_URL'] || "localhost:9200"
+})
 
 EM.run do
   client.subscribe 'AllAccounts' do |message|
